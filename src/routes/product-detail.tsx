@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router";
-import { getProductBySlug } from "@/module/db";
+import { getProductBySlug } from "@/modules/product";
 import { LoaderFunctionArgs } from "react-router";
 
 import {
@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { formatDate } from "@/lib/date";
 
 export const productLoader = async ({ params }: LoaderFunctionArgs) => {
   if (!params.slug) {
@@ -82,10 +83,8 @@ export function Product() {
             Add to Cart
           </button>
           <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500">
-            <p>Added on: {new Date(product.createdAt).toLocaleDateString()}</p>
-            <p>
-              Last updated: {new Date(product.updatedAt).toLocaleDateString()}
-            </p>
+            <p>Added on: {formatDate(product.createdAt)}</p>
+            <p>Last updated: {formatDate(product.updatedAt)}</p>
           </div>
         </div>
       </div>

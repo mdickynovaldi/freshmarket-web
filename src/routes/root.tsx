@@ -5,9 +5,11 @@ import { Footer } from "@/routes/footer";
 
 export function Root() {
   return (
-    <main>
+    <main className="flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <main className="flex-[1]">
+        <Outlet />
+      </main>
       <Footer />
     </main>
   );

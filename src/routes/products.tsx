@@ -1,5 +1,4 @@
-import { getAllProducts } from "@/module/db";
-import { Product } from "@/module/type";
+import { getAllProducts } from "@/modules/product";
 import { Link, useLoaderData } from "react-router";
 
 export const productsLoader = async () => {
@@ -9,6 +8,15 @@ export const productsLoader = async () => {
 
 export function Products() {
   const { products } = useLoaderData<typeof productsLoader>();
+
+  if (!products) {
+    return (
+      <section>
+        <h1>Products data not available</h1>
+      </section>
+    );
+  }
+
   return (
     <section id="featured-products">
       <div className="bg-white">
@@ -17,7 +25,7 @@ export function Products() {
             Featured Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product: Product) => (
+            {products.map((product) => (
               <Link
                 to={`/product/${product.slug}`}
                 key={product.id}

@@ -15,22 +15,37 @@ FreshMarket is a web application designed to make it easier for users to shop fo
 
 ## Installation
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/username/freshmarket-frontend.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd freshmarket-frontend
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Run the application:
-   ```bash
-   npm start
-   ```
+Clone this repository.
+
+Install dependencies:
+
+```bash
+bun install
+```
+
+Setup the `.env` file:
+
+```sh
+cp .env.example .env
+```
+
+Edit `.env`:
+
+```sh
+VITE_BACKEND_API_URL=http://localhost:3000
+```
+
+Generate types:
+
+```bash
+bunx openapi-typescript http://localhost:3000/openapi.json -o ./src/schema.d.ts
+```
+
+Run the application:
+
+```bash
+bun dev
+```
 
 ## Contribution
 
