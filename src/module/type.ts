@@ -8,5 +8,8 @@ export type Product = {
   weight: number;
   createdAt: string;
   updatedAt: string;
-  images: string[];
+  images: {
+    url: string;
+    alt: string;
+  };
 };

@@ -3,7 +3,6 @@ import { getAllProducts } from "@/module/db";
 import { Product } from "@/module/type";
 
 export async function homeLoader() {
-  console.log("loader");
   const categories = await getAllProducts();
   return { categories };
 }
