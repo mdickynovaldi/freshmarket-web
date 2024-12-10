@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "schema": "openapi-typescript http://localhost:3000/openapi.json -o ./src/schema.d.ts",
+    "schema": "openapi-typescript https://www.freshmarket.mdickynovaldi.com -o ./src/schema.d.ts",
     "schema:prod": "openapi-typescript https://www.freshmarket.mdickynovaldi.com -o ./src/schema.d.ts"
   },
   "dependencies": {
