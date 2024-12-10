@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "schema": "openapi-typescript https://www.freshmarket.mdickynovaldi.com -o ./src/schema.d.ts",
-    "schema:prod": "openapi-typescript https://www.freshmarket.mdickynovaldi.com -o ./src/schema.d.ts"
+    "schema:prod": "openapi-typescript https://www.freshmarket.mdickynovaldi.com -o ./src/schema.d.ts",
+    "build": "tsc -b && vite build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
