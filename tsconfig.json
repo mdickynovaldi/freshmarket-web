@@ -9,9 +9,12 @@
     }
   ],
   "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "module": "ESNext", // or "NodeNext"
+    "moduleResolution": "Bundler" // or "NodeNext"
   }
 }
