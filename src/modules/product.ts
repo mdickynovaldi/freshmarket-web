@@ -1,21 +1,7 @@
 import { BACKEND_API_URL } from "@/lib/env";
 import { paths } from "@/schema";
 
-export type Product = {
-  id: string;
-  slug: string;
-  name: string;
-  price: string;
-  description: string;
-  stock: number;
-  weight: number;
-  createdAt: string;
-  updatedAt: string;
-  images: {
-    url: string;
-    alt: string;
-  };
-};
+
 
 export async function getAllProducts() {
   try {
