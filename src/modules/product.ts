@@ -1,10 +1,9 @@
 import { BACKEND_API_URL } from "@/lib/env";
 import { paths } from "@/schema";
 
-
-
 export async function getAllProducts() {
   try {
+    console.log(BACKEND_API_URL);
     const response = await fetch(`${BACKEND_API_URL}/products`, {
       method: "GET",
     });
