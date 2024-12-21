@@ -3,6 +3,7 @@ import { getAllProducts } from "@/modules/product";
 
 export async function loader() {
   const products = await getAllProducts();
+
   return { products };
 }
 
@@ -63,9 +64,7 @@ export function Home() {
                 >
                   <div className="mb-4">
                     <img
-                      src={
-                        product.images[0]?.url
-                      }
+                      src={product.images[0]?.url}
                       alt={product.name}
                       className="w-full h-48 object-cover rounded-lg"
                     />

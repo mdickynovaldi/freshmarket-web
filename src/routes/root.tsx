@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 
 import { Header } from "@/components/ui/header";
-import { Footer } from "@/routes/footer";
+import { Footer } from "@/components/ui/footer";
 
 export function Root() {
   return (

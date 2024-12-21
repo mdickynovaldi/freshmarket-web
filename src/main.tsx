@@ -7,6 +7,9 @@ import { NotFound } from "@/routes/404.tsx";
 import { Home, loader as homeLoader } from "@/routes/home.tsx";
 import { Product, productLoader } from "./routes/product-detail";
 import { Products, productsLoader } from "./routes/products";
+import { Login, loginAction } from "./routes/login";
+import { Register, registerAction } from "./routes/register";
+import { Profile, profileLoader } from "./routes/profile";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,14 @@ const router = createBrowserRouter([
         path: "/products",
         element: <Products />,
         loader: productsLoader,
+      },
+      { path: "/login", element: <Login />, action: loginAction },
+
+      { path: "/register", element: <Register />, action: registerAction },
+      {
+        path: "/profile",
+        element: <Profile />,
+        loader: profileLoader,
       },
     ],
   },

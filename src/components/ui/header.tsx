@@ -1,6 +1,10 @@
+import { Cookies } from "react-cookie";
 import { Link } from "react-router";
 
 export function Header() {
+  const cookies = new Cookies();
+  const token = cookies.get("token");
+
   return (
     <header className="bg-white shadow-md">
       <nav className="container mx-auto px-6 py-3">
@@ -24,25 +28,34 @@ export function Header() {
             <Link to="/cart" className="text-gray-600 hover:text-gray-800 mx-4">
               Cart
             </Link>
-            <Link
-              to="/profile"
-              className="text-gray-600 hover:text-gray-800 mx-4 p-2 border-2 border-gray-300 rounded-full"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            {token ? (
+              <Link
+                to="/profile"
+                className="text-gray-600 hover:text-gray-800 mx-4 p-2 border-2 border-gray-300 rounded-full"
               >
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </Link>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="text-gray-600 hover:text-gray-800 mx-4 p-2 border-2 border-gray-300 rounded-full"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </nav>

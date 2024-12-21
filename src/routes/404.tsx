@@ -1,26 +1,18 @@
-import { Link } from "react-router";
+import { Footer } from "@/components/ui/footer";
+import { Header } from "@/components/ui/header";
 
 export function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 to-indigo-900 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-9xl font-bold text-white mb-4">404</h1>
-        <p className="text-2xl text-purple-200 mb-8">
-          Waduh! Sepertinya kamu tersesat...
-        </p>
-        <div className="space-y-4">
-          <p className="text-purple-300">
-            Halaman yang kamu cari tidak ditemukan 🤔
-          </p>
-          <Link
-            to="/"
-            className="inline-block px-6 py-3 bg-purple-500 hover:bg-purple-600 
-                       text-white rounded-lg transition-colors duration-200"
-          >
-            Kembali ke Beranda
-          </Link>
-        </div>
+    <>
+      <div className="flex flex-col h-screen justify-between">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <h1 className="text-5xl font-bold text-center text-gray-500 ">
+            404 - Page Not Found
+          </h1>
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 }
