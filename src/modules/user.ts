@@ -21,7 +21,7 @@ export async function getUser() {
       throw new Error(`Failed to get user: ${response.status}`);
     }
 
-    const data: paths["/users"]["get"]["responses"][200]["content"]["application/json"] =
+    const data: paths["/users/me"]["get"]["responses"][200]["content"]["application/json"] =
       await response.json();
 
     return data;
