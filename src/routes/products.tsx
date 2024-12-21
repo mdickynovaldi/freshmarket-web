@@ -22,7 +22,7 @@ export function Products() {
       <div className="bg-white">
         <div className="container mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
-            Featured Products
+            All Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
@@ -33,9 +33,7 @@ export function Products() {
               >
                 <div className="mb-4">
                   <img
-                    src={
-                      "https://s3-publishing-cmn-svc-prd.s3.ap-southeast-1.amazonaws.com/article/L_0LCFtvHjXicJvX6F9rv/original/003102700_1525316788-5-Buah-Ini-Harus-Ada-dalam-Menu-Harian-Anda-By-Alexander-Raths-shutterstock.jpg"
-                    }
+                    src={product.images[0].url}
                     alt={product.name}
                     className="w-full h-48 object-cover rounded-lg"
                   />
